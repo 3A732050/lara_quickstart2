@@ -49,6 +49,9 @@ class TaskController extends Controller
             'name' => $request->name,
         ]);
 
+        //$request->user()->tasks()->create($request->all());
+        //auth()->user()->tasks()->create($request->all());
+
         return redirect('/tasks');
     }
 
