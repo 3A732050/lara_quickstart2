@@ -61,7 +61,15 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-btn fa-sign-out"></i>
+                                    Logout
+                                </a>
+                            </li>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
                         </ul>
                     </li>
                 @endif
